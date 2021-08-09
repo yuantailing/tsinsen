@@ -1,0 +1,1 @@
+main(){int x;scanf("%d",&x);if(x%2)puts("even");else puts("odd");return 0;}

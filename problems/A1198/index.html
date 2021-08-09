@@ -1,0 +1,176 @@
+<div>矩阵取数游戏</div>
+<div>时间限制：1.0s 内存限制：256.0MB</div>
+<p>【问题描述】</p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">帅帅经常跟同学玩一个矩阵取数游戏：对于一个给定的</span><i><span lang="EN-US">n</span></i><span lang="EN-US">*<i>m</i></span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">的矩阵，矩阵中的每个元素</span><i><span lang="EN-US">a<sub>ij</sub></span></i><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">均为非负整数。游戏规则如下：</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-char-indent-count:
+0;mso-list:l0 level1 lfo1;tab-stops:list 21.0pt"><!--[if !supportLists]--><span lang="EN-US">1.<span style="font-family: 'Times New Roman'; font-size: 7pt; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">每次取数时须从每行各取走一个元素，共</span><i><span lang="EN-US">n</span></i><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">个。</span><i><span lang="EN-US">m</span></i><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">次后取完矩阵所有元素；</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-char-indent-count:
+0;mso-list:l0 level1 lfo1;tab-stops:list 21.0pt"><!--[if !supportLists]--><span lang="EN-US">2.<span style="font-family: 'Times New Roman'; font-size: 7pt; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">每次取走的各个元素只能是该元素所在行的行首或行尾；</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-char-indent-count:
+0;mso-list:l0 level1 lfo1;tab-stops:list 21.0pt"><!--[if !supportLists]--><span lang="EN-US">3.<span style="font-family: 'Times New Roman'; font-size: 7pt; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">每次取数都有一个得分值，为每行取数的得分之和，<b>每行取数的得分</b></span><b><span lang="EN-US"> = </span></b><b><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">被取走的元素值</span></b><b><span lang="EN-US">*2<i><sup>i</sup></i></span></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">，其中</span><i><span lang="EN-US">i</span></i><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">表示第</span><i><span lang="EN-US">i</span></i><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">次取数（从</span><span lang="EN-US">1</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">开始编号）；</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-char-indent-count:
+0;mso-list:l0 level1 lfo1;tab-stops:list 21.0pt"><!--[if !supportLists]--><span lang="EN-US">4.<span style="font-family: 'Times New Roman'; font-size: 7pt; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">游戏结束总得分为</span><i><span lang="EN-US">m</span></i><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">次取数得分之和。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">帅帅想请你帮忙写一个程序，对于任意矩阵，可以求出取数后的最大得分。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p>【输入格式】</p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">输入</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin">包括</span><i><span lang="EN-US">n</span></i><span lang="EN-US">+1</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">行</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">：</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">第</span><span lang="EN-US">1</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">行为两个用空格隔开的整数</span><i><span lang="EN-US">n</span></i><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">和</span><i><span lang="EN-US">m</span></i><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">第</span><span lang="EN-US">2~<i>n</i>+1</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">行为</span><i><span lang="EN-US">n</span></i><span lang="EN-US">*<i>m</i></span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">矩阵，其中每行有</span><i><span lang="EN-US">m</span></i><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">个用单个空格隔开的非负整数。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p>【输出格式】<br />
+<span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">输出</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">包含</span><span lang="EN-US" style="font-size:
+12.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-latin;mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">1</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">行，为一个整数，即输入矩阵取数后的最大得分。</span><br />
+【样例输入】</p>
+<p class="a"><span lang="EN-US">2 3<o:p></o:p></span></p>
+<p class="a"><span lang="EN-US">1 2 3<o:p></o:p></span></p>
+<p><span lang="EN-US" style="font-size: 12pt; font-family: 'Times New Roman', serif; ">3 4 2</span><br />
+【样例输出】<br />
+<span lang="EN-US" style="font-size: 12pt; font-family: 'Times New Roman', serif; ">82</span><br />
+【样例输入】</p>
+<p class="a">
+<p class="a"><span lang="EN-US">1 4<o:p></o:p></span></p>
+<span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.5pt;font-family:
+&quot;Times New Roman&quot;,&quot;serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-latin;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">4 5 0 5</span></p>
+<p>【样例输出】<br />
+<span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:
+10.5pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-latin;mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">122</span><font face="'Times New Roman', serif" size="3"><br />
+</font>【样例输入】</p>
+<p class="a">
+<p class="a"><span lang="EN-US">2 10<o:p></o:p></span></p>
+<p class="a"><span lang="EN-US">96 56 54 46 86 12 23 88 80 43<o:p></o:p></span></p>
+<span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">16 95 18 29 30 53 88 83 64 67</span></p>
+<p>【样例输出】<br />
+<span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;,&quot;serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-latin;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">316994</span><br />
+【数据规模和约定】</p>
+<p class="MsoNormal" style="text-indent:24.0pt;line-height:12.0pt"><span lang="EN-US">60%</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;">的数据满足：</span><span lang="EN-US">1&lt;=<i>n</i>, <i>m</i>&lt;=30, </span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;">答案不超过</span><span lang="EN-US">10<sup>16</sup></span><span lang="EN-US"><o:p></o:p></span></p>
+<p><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.5pt;font-family:
+&quot;Times New Roman&quot;,&quot;serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-latin;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">100%</span><span style="font-size:12.0pt;
+mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">的数据满足：</span><span lang="EN-US" style="font-size:
+12.0pt;mso-bidi-font-size:10.5pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">1&lt;=<i>n</i>, <i>m</i>&lt;=80, 0&lt;=<i>a<sub>ij</sub></i>&lt;=1000</span>。</p><div>编译语言：CPP,C0X,VC9,C,JAVA,PAS,PYTHON</div>

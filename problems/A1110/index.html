@@ -1,0 +1,83 @@
+<div>街道</div>
+<div>时间限制：1.0s 内存限制：256.0MB</div>
+<p>【问题描述】</p>
+<p class="MsoList" style="margin-left:0cm;text-indent:0cm;mso-layout-grid-align:
+none"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">设有一个</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">＊</span><span lang="EN-US">M</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">（</span><span lang="EN-US">l</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">&le;</span><span lang="EN-US"> N</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">&le;</span><span lang="EN-US">50</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US"> l</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">&le;</span><span lang="EN-US"> M</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">&le;</span><span lang="EN-US"> 50</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">）的街道。n和m表示横竖街道数。</span></p>
+<p class="MsoList" style="margin-left:0cm;text-indent:0cm;mso-layout-grid-align:
+none"><span lang="EN-US">&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">规定行人从</span><span lang="EN-US">A(1,1)</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">出发，在街道上只能向东或北方向行走。</span><span lang="EN-US"> </span></p>
+<p class="MsoList" style="margin-left:0cm;text-indent:21.0pt;mso-layout-grid-align:
+none"><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">＝</span><span lang="EN-US">3</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">M=3</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">的街道图，从</span><span lang="EN-US">A</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">出发到达</span><span lang="EN-US">B</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">共有</span><span lang="EN-US">6</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">条可供行走的路。</span></p>
+<p class="MsoList" style="margin-left:18.0pt;text-indent:21.0pt;mso-layout-grid-align:
+none"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">若在</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">＊</span><span lang="EN-US">M</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">的街道中，设置一个矩形障碍区域（包括围住该区域的街道和点）不让行人通行。</span></p>
+<p class="MsoList" style="margin-left:18.0pt;text-indent:21.0pt;mso-layout-grid-align:
+none"><span style="text-indent: 21pt; font-family: 宋体; ">此矩形障碍区域用</span><span lang="EN-US" style="text-indent: 21pt; ">2</span><span style="text-indent: 21pt; font-family: 宋体; ">对顶点坐标给出</span><span lang="EN-US" style="text-indent: 21pt; ">,</span><span style="text-indent: 21pt; font-family: 宋体; ">前图中的</span><span lang="EN-US" style="text-indent: 21pt; ">2</span><span style="text-indent: 21pt; font-family: 宋体; ">对顶点坐标为</span><span lang="EN-US" style="text-indent: 21pt; ">:(2</span><span style="text-indent: 21pt; font-family: 宋体; ">，</span><span lang="EN-US" style="text-indent: 21pt; ">2),(8</span><span style="text-indent: 21pt; font-family: 宋体; ">，</span><span lang="EN-US" style="text-indent: 21pt; ">4),</span><span style="text-indent: 21pt; font-family: 宋体; ">此时从</span><span lang="EN-US" style="text-indent: 21pt; "> A</span><span style="text-indent: 21pt; font-family: 宋体; ">出发到达</span><span lang="EN-US" style="text-indent: 21pt; ">B</span><span style="text-indent: 21pt; font-family: 宋体; ">的路径仅有两条。</span></p>
+<p class="MsoList" style="margin-left:0cm;text-indent:0cm;mso-layout-grid-align:
+none"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoList" style="margin-left:0cm;text-indent:0cm;mso-layout-grid-align:
+none"><span lang="EN-US">&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">程序要求：</span></p>
+<p class="MsoList" style="margin-left:0cm;text-indent:0cm;mso-layout-grid-align:
+none"><span lang="EN-US">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</span></p>
+<p class="MsoList" style="margin-left:0cm;text-indent:0cm;mso-layout-grid-align:
+none"><span lang="EN-US">&nbsp;&nbsp; &nbsp;</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">任务一：给出</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">M</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">后，求出所有从</span><span lang="EN-US">A</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">出发到达</span><span lang="EN-US">B</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">的路径的条数。</span><span lang="EN-US"> </span></p>
+<p class="MsoList" style="margin-left:18.0pt;text-indent:-18.0pt;mso-layout-grid-align:
+none"><span lang="EN-US">&nbsp;&nbsp; </span></p>
+<p class="MsoList" style="margin-left:63.0pt;text-indent:-63.0pt;mso-layout-grid-align:
+none"><span lang="EN-US">&nbsp;&nbsp; &nbsp;</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">任务二：给出</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">M</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，同时再给出此街道中的矩形障碍区域的</span><span lang="EN-US">2</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">对顶点坐标</span><span lang="EN-US">(X1,y1), </span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">（</span><span lang="EN-US">X2</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">Y2</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">），然后求出此种情况下所有从</span><span lang="EN-US">A</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">出发到达</span><span lang="EN-US">B</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">的路径的条数。</span><span lang="EN-US"> </span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">如果答案太大，输出最后</span><span lang="EN-US">20</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">位。</span></p>
+<p>【输入格式】</p>
+<p>第一行两个数n和m。</p>
+<p>第二行为X1,Y1,X2,Y2.如果是任务一，则第二行为4个0.<br />
+【输出格式】</p>
+<p>输出走路方案数。
+<p>【样例输入1】</p>
+<p>3 3</p>
+<p>0 0 0 0</p>
+<p><br />
+【样例输出1】</p>
+<p>6</p>
+<p>【样例输入2】</p>
+<p>50 50</p>
+<p>2 2 49 49</p>
+<p><br />
+【样例输出2】</p>
+<p>2</p>
+</p>
+<p>【数据规模和约定】</p>
+<p>1&lt;=N,M&lt;=50</p><div>编译语言：CPP,C0X,VC9,C,JAVA,PAS,PYTHON</div>

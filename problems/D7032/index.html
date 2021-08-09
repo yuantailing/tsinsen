@@ -1,0 +1,167 @@
+<div>LZW编码</div>
+<div>时间限制：1.0s 内存限制：256.0MB</div>
+<p>【问题描述】</p>
+<p>LZW(Lempel-Ziv&amp;Welch)编码又称字串表编码，是Welch将Lemple和Ziv所提出来的无损压缩技术改进后的压缩方法。GIF图像文件就是采用一种改良的LZW压缩算法，通常称为GIF-LZW压缩算法。</p>
+<p>请你按照下面的算法描述，实现LZW的编码和解码过程。</p>
+<p>在编码开始前，只有一部基础构造元素的编码词典。编码过程如下：</p>
+<p>1．<span class="Apple-tab-span" style="white-space:pre">	</span>初始化词典<span style="color: rgb(32, 0, 0); font-family: 'Times New Roman', 宋体; font-size: 14px;">（定义词典字符数组）</span>；从待编码信息中读入第一个字符x；</p>
+<p>2．<span class="Apple-tab-span" style="white-space:pre">	</span>字符串s初始化为x，向后再读一个字符，并将该字符加到串s的后面，查找串s是否在词典中</p>
+<p>a)<span class="Apple-tab-span" style="white-space:pre">	</span>如果s在词典中，再向后多一个字符，并将该字符加到串s的后面，继续查找s是否在词典中，依次类推，直到s不在词典中；</p>
+<p>b)<span class="Apple-tab-span" style="white-space:pre">	</span>如果s不在词典中，用字典中已有条目对s减去最后一个字符得到的字符串进行编码，然后将s作为一个新条目加到词典中；</p>
+<p>3．<span class="Apple-tab-span" style="white-space:pre">	</span>x重置为s中的最后一个字符，回到2。</p>
+<p>注意：规定词典的规模上限256，当词典规模到达上限后，后续遇到的新词条则不再加入。</p>
+<p>举例说明，考虑一个待编码的信息串：&quot; ababcbababaaaaaaa&quot;。初始词典只有3个条目，第一个为a，编码为0；第二个为b，编码为1；第三个为c，编码为2。则信息串的编码结果为0-1-3-2-4-7-0-9-10-0-，其中-表示编码分隔符。</p>
+<p>编码结束后的词典为：</p>
+<p style="text-align: center;">&nbsp;</p>
+<div align="center">
+<table align="center" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="208" style="width:156.0pt;mso-cellspacing:0cm;border:solid windowtext 1.0pt;
+    mso-border-alt:solid windowtext .5pt;mso-padding-alt:0cm 0cm 0cm 0cm;
+    mso-border-insideh:.5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+    <tbody>
+        <tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:14.1pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.1pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+            &quot;Times New Roman&quot;">编码</span></b><b><span lang="EN-US"><o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.1pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+            &quot;Times New Roman&quot;">字符（串）</span></b><b><span lang="EN-US"><o:p></o:p></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:1;height:14.1pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.1pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">0<o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.1pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">a<o:p></o:p></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:2;height:13.0pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:13.0pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">1<o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:13.0pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">b<o:p></o:p></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:3;height:14.7pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">2<o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">c<o:p></o:p></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:4;height:14.7pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">3<o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">ab<o:p></o:p></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:5;height:15.25pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:15.25pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">4<o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:15.25pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">ba<o:p></o:p></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:6;height:14.7pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">5<o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">abc<o:p></o:p></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:7;height:14.7pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">6<o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">cb<o:p></o:p></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:8;height:14.7pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">7<o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">bab<o:p></o:p></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:9;height:14.7pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">8<o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">baba<o:p></o:p></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:10;height:14.1pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.1pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">9<o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.1pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">aa<o:p></o:p></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:11;height:15.25pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:15.25pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">10<o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:15.25pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">aaa<o:p></o:p></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:12;mso-yfti-lastrow:yes;height:14.7pt">
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">11<o:p></o:p></span></b></p>
+            </td>
+            <td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;
+            mso-border-alt:solid windowtext .5pt;padding:0cm 0cm 0cm 0cm;height:14.7pt">
+            <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US">aaaa<o:p></o:p></span></b></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<p>可以看到，信息被压缩了。</p>
+<p>【问题一】</p>
+<p>规定基础词典为26个小写英文字母，a~z对应的编码是0~25，词典的上限为256（含基础词典），即词典中最多有256个条目。</p>
+<p>请你为输入的字符串进行编码。</p>
+<p>【输入格式】<br />
+输入只有一行，为一个字符串，其中只含有小写字母。<br />
+【输出格式】<br />
+输出只有一行，即编码后结果，用&ldquo;-&rdquo;作为编码的分隔符，注意最后一个编码后也输出一个分隔符（见样例）。<br />
+【样例输入】<br />
+ababcbababaaaaaaa<br />
+【样例输出】<br />
+0-1-26-2-27-30-0-32-33-0-</p><div>编译语言：CPP,C</div>

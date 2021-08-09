@@ -1,0 +1,95 @@
+<div>c++_ch04_01</div>
+<div>时间限制：2.0s 内存限制：32.0MB</div>
+<p class="a" style="margin: 6pt 0cm 3pt 18pt"><font class="Apple-style-span" face="'Times New Roman'"><span class="Apple-style-span" style="font-size: medium;"> </span></font></p>
+<p class="a">【问题描述】</p>
+<p class="a"><font class="Apple-style-span" face="'Times New Roman'"><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">实现一个表示三维坐标的</span><span lang="EN-US">Point</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">类。要求该类包含一个构造函数，一个复制构造函数，一个将点变为相对于原点的对称点的</span><span lang="EN-US">negate</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">函数，一个返回该点到原点（</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，</span><span lang="EN-US">0</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">）距离的函数</span><span lang="EN-US">dist</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">。</span></font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'"> </font></p>
+<p class="a" style="text-indent:0cm;mso-list:none"><font class="Apple-style-span" face="'Times New Roman'"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+background:#D9D9D9;mso-shading:white;mso-pattern:gray-15 auto">第一步</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">：请编写代码实现</span><span lang="EN-US">Point</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">类的声明和定义：</span></font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'"> </font></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><font class="Apple-style-span" face="'Times New Roman'">&nbsp;<span lang="EN-US" style="background:#D9D9D9;mso-shading:white;mso-pattern:gray-15 auto"><o:p>&nbsp;</o:p></span></font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'">
+<p class="a" style="text-indent:0cm;mso-list:none"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+background:#D9D9D9;mso-shading:white;mso-pattern:gray-15 auto">第二步</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">：利用如下测试程序对</span><span lang="EN-US">Point</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">类进行测试：</span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+<p class="a" style="text-indent:0cm;mso-list:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:red;mso-font-kerning:0pt">输入：</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;color:red;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">100 0 0<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:red;mso-font-kerning:0pt">输出：</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;color:red;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">p = (100, 0, 0), p.dist() = 100<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">p = (-100, 0, 0), p.dist() = 100<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;background:yellow;mso-highlight:yellow;
+mso-font-kerning:0pt">示例</span><span lang="EN-US" style="font-size:9.0pt;
+font-family:&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;background:yellow;mso-highlight:yellow;mso-font-kerning:0pt">2</span><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;background:yellow;mso-highlight:yellow;
+mso-font-kerning:0pt">：</span><span lang="EN-US" style="font-size:9.0pt;
+font-family:&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:red;mso-font-kerning:0pt">输入：</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;color:red;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">10000 10000 10000<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:red;mso-font-kerning:0pt">输出：</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;color:red;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">p = (10000, 10000, 10000), p.dist() = 17320.5<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">p = (-10000, -10000, -10000), p.dist() = 17320.5<o:p></o:p></span></p>
+<p class="a" style="text-indent:0cm;mso-list:none"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;</span></span></p>
+</font></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p><div>编译语言：CPP</div>

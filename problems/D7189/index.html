@@ -1,0 +1,58 @@
+<div>借阅系统</div>
+<div>时间限制：1.0s 内存限制：256.0MB</div>
+<p>&nbsp;【问题描述】</p>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>这是一道补充代码题，给定图书结构体、借阅系统结构体以及其他主体代码的实现，要求考生完善接口函数，使程序能正确运行。</div>
+<div>&nbsp;</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>图书结构体中，id表示书本编号（保证唯一），available表示此书是否已被借出（true表示没有被借出，false表示已借出）。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>借阅系统结构体中，books为图书结构体数组，n表示图书数目。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>考生需要实现void init()、bool borrowBook(id)和bool returnBook(id)三个接口。除第一个外，其他两个传入参数均为整数id，表示借/还书的编号；返回参数均为bool值，要是借/还书成功，则返回true，否则返回false。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>借书接口中，如果编号为id的书已经被借出，则此次借书不成功；否则应标记书已借出，成功借书。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>还书接口中，如果编号为id的书没有被借出，则此次借书不成功；否则应标记书已还回，成功还书。</div>
+<div>&nbsp;</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>程序会先为借阅系统结构体中的books和n进行初始化，即把输入数据正确赋值给它们。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>初始化完成后，程序会立刻调用考生实现的init()，而且只会调用这一次。考生如果需要对数据进行初始化，可在init()里写出。books和n在初始化之后，将把修改权完全交由考生实现的接口。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span></div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>详见代码。</div>
+<div>&nbsp;</div>
+<div>【输入格式】</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>第一行两个正整数n和m，分别表示图书数目和操作数目。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>接下来n行每行一个正整数，表示对应图书的编号。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>接下来m行，每行两个整数kind和id。kind为0表示借书，为1表示还书；id表示图书编号，保证id合法。</div>
+<div>&nbsp;</div>
+<div>【输出格式】</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>输出m行，如果对应操作成功，输出1；否则输出0。</div>
+<div>&nbsp;</div>
+<div>【输入样例】</div>
+<div>3 6</div>
+<div>123</div>
+<div>92</div>
+<div>567</div>
+<div>1 123</div>
+<div>0 92</div>
+<div>0 92</div>
+<div>0 567</div>
+<div>1 92</div>
+<div>0 92</div>
+<div>&nbsp;</div>
+<div>【输出样例】</div>
+<div>0</div>
+<div>1</div>
+<div>0</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>&nbsp;</div>
+<div>【样例解释】</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>一开始三本书都没有被借出。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>1. 书123没有被借出，还回失败。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>2. 书92没有被借出，借出成功。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>3. 书92已经被借出，借出失败。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>4. 书567没有被借出，借出成功。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>5. 书92已经被借出，还回成功。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>6. 书92已经被还回，借出成功。</div>
+<div>&nbsp;</div>
+<div>【数据规模】</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>40%的数据，n&lt;=1000，m&lt;=1000;</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>另外30%的数据，初始化后保证books数组按照id从小到大有序；</div>
+<div><span class="Apple-tab-span" style="white-space:pre">	</span>100%的数据，n&lt;=100000，m&lt;=100000。</div>
+<div>&nbsp;</div><div>编译语言：CPP,C</div>

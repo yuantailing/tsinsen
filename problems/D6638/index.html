@@ -1,0 +1,106 @@
+<div>二分查找1</div>
+<div>时间限制：1.0s 内存限制：256.0MB</div>
+<p>【问题描述】</p>
+<p>二分查找又叫折半查找(Binary Search, Half-Interval Search)，在有序序列中可以用O(1)时间初始化，O(logN)的时间进行查找。</p>
+<p>给定一个长为N的严格升序序列a(a[0], a[1] ... a[N-1])。有M个询问，每个询问有一个参数x，求x在a中的下标（从0开始），若不存在则为-1。<br />
+【输入格式】</p>
+<div>输入共N+M+1行。</div>
+<div>第一行两个整数N，M。</div>
+<div>接下来N行，每行一个数，表示给定序列。</div>
+<div>接下来M行，每行一个数，表示询问参数。</div>
+<p>【输出格式】</p>
+<div>输出共M行</div>
+<div>每行一个数，表示所求下标。</div>
+<p>【样例输入】</p>
+<div>3 7</div>
+<div>1</div>
+<div>3</div>
+<div>5</div>
+<div>0</div>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+<p>【样例输出】</p>
+<div>-1</div>
+<div>0</div>
+<div>-1</div>
+<div>1</div>
+<div>-1</div>
+<div>2</div>
+<div>-1</div>
+<p>【数据规模和约定】<br />
+共10组数据。</p>
+<table width="500" border="1" cellpadding="1" cellspacing="1">
+    <tbody>
+        <tr>
+            <td>T</td>
+            <td>N</td>
+            <td>M</td>
+        </tr>
+        <tr>
+            <td>0<span class="Apple-tab-span" style="white-space:pre">	</span></td>
+            <td>1</td>
+            <td>2*10^6</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>2*10^6</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>2*10^6</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>10</td>
+            <td>1.5*10^6</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>50</td>
+            <td>1.5*10^6</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>100</td>
+            <td>1.5*10^6</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>10^3</td>
+            <td>10^6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>10^4</td>
+            <td>10^6</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>10^5</td>
+            <td>10^6</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>10^6</td>
+            <td>10^5</td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
+<p>所有数均为非负整数且在int范围内。</p>
+<p>【另】</p>
+<p>若看不懂下面的东西，请忽略，以后再说。</p>
+<p>此题请先用在线算法写，复杂度应为O(N+MlogN)。</p>
+<p>如有兴趣可用离线算法，复杂度为O(N+MlogM)。</p>
+<p>&nbsp;</p>
+<p>【提示】</p>
+<p>&nbsp;</p>
+<p>请C++选手使用scanf读入，cin会超时。</p>
+<p>&nbsp;</p>
+<p>scanf用法： int soysauce; scanf(&quot;%d&quot;, &amp;soysauce);</p><div>编译语言：CPP,C</div>

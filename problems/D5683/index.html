@@ -1,0 +1,23 @@
+<div>c++_ch08_03</div>
+<div>时间限制：1.0s 内存限制：512.0MB</div>
+<p style="margin: 6pt 0cm 3pt" class="a0">【问题描述】</p>
+<p style="margin: 6pt 0cm 3pt" class="a0"><font size="3"><font face="宋体"><span style="mso-bidi-font-family: Arial">已知一个有理数类<span lang="EN-US">Zrf_Ratio</span>，实现如下的操作符重载形式：</span><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 6pt" lang="EN-US"><o:p></o:p></span></font></font></p>
+<p style="text-align: left; margin: 0cm 0cm 0pt; mso-para-margin-left: 0gd; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="font-family: 宋体; font-size: 12pt; mso-font-kerning: 0pt; mso-bidi-font-family: Arial" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>zrf_Ratio&amp; operator=(const zrf_Ratio&amp;);<o:p></o:p></span></p>
+<p style="text-align: left; margin: 0cm 0cm 0pt; mso-para-margin-left: 0gd; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="font-family: 宋体; font-size: 12pt; mso-font-kerning: 0pt; mso-bidi-font-family: Arial" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>zrf_Ratio&amp; operator*=(const zrf_Ratio&amp;);<o:p></o:p></span></p>
+<p style="text-align: left; margin: 0cm 0cm 0pt; mso-para-margin-left: 0gd; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="font-family: 宋体; font-size: 12pt; mso-font-kerning: 0pt; mso-bidi-font-family: Arial" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>zrf_Ratio operator++();<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+<p style="text-align: left; margin: 0cm 0cm 0pt; mso-para-margin-left: 0gd; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="font-family: 宋体; font-size: 12pt; mso-font-kerning: 0pt; mso-bidi-font-family: Arial" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>zrf_Ratio operator++(int);<span style="mso-spacerun: yes">&nbsp; </span><o:p></o:p></span></p>
+<p style="text-align: left; margin: 0cm 0cm 0pt; mso-para-margin-left: 0gd; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="font-family: 宋体; font-size: 12pt; mso-font-kerning: 0pt; mso-bidi-font-family: Arial" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>int&amp; operator[](int);<o:p></o:p></span></p>
+<p style="text-align: left; margin: 0cm 0cm 0pt; mso-para-margin-left: 0gd; mso-pagination: widow-orphan" class="MsoNormal" align="left">&nbsp;</p>
+<p style="text-align: left; margin: 0cm 0cm 0pt; mso-para-margin-left: 0gd; mso-layout-grid-align: none" class="MsoNormal" align="left">&nbsp;</p>
+<p style="text-align: left; margin: 0cm 0cm 0pt; mso-para-margin-left: 0gd; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 6pt; mso-font-kerning: 0pt; mso-fareast-font-family: 宋体" lang="EN-US">&nbsp;<o:p></o:p></span>【测试】</p>
+<p style="text-align: left; margin: 0cm 0cm 0pt; mso-para-margin-left: 0gd; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="font-family: 宋体; font-size: 12pt; mso-font-kerning: 0pt; mso-bidi-font-family: Arial">输入为<span lang="EN-US">4</span>个整数，输出见<span lang="EN-US">main</span>函数。 <span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="text-align: left; margin: 6pt 0cm 3pt; mso-para-margin-left: 0gd; mso-pagination: widow-orphan; mso-para-margin-top: 6.0pt; mso-para-margin-right: 0cm; mso-para-margin-bottom: 3.0pt" class="MsoNormal" align="left">【输入样例】</p>
+<p style="text-align: left; margin: 6pt 0cm 3pt; mso-para-margin-left: 0gd; mso-pagination: widow-orphan; mso-para-margin-top: 6.0pt; mso-para-margin-right: 0cm; mso-para-margin-bottom: 3.0pt" class="MsoNormal" align="left"><span style="font-family: 宋体; font-size: 12pt; mso-font-kerning: 0pt; mso-bidi-font-family: Arial" lang="EN-US">1 7&nbsp;26 65<o:p></o:p></span></p>
+<p style="text-align: left; margin: 6pt 0cm 3pt; mso-para-margin-left: 0gd; mso-pagination: widow-orphan; mso-para-margin-top: 6.0pt; mso-para-margin-right: 0cm; mso-para-margin-bottom: 3.0pt" class="MsoNormal" align="left">【输出样例】</p>
+<p style="text-align: left; margin: 6pt 0cm 3pt; mso-para-margin-left: 0gd; mso-pagination: widow-orphan; mso-para-margin-top: 6.0pt; mso-para-margin-right: 0cm; mso-para-margin-bottom: 3.0pt" class="MsoNormal" align="left"><span style="font-family: 宋体; font-size: 12pt; mso-font-kerning: 0pt; mso-bidi-font-family: Arial" lang="EN-US">zrf is:1/7; ssh is:2/5<br>
+zl is:1/7<br>
+After zrf*=ssh, zrf is:1/7<br>
+After zrf++ is:1/7<br>
+After ++zrf is:15/7<br>
+zrf[1] is:15; zrf[2] is:7&nbsp;<o:p></o:p></span></p>
+<p>&nbsp;</p><div>编译语言：CPP</div>

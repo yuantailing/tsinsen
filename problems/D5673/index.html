@@ -1,0 +1,167 @@
+<div>c++_ch04_02</div>
+<div>时间限制：2.0s 内存限制：32.0MB</div>
+<p style="margin: 6pt 0cm 3pt 18pt" class="a0"><font class="Apple-style-span" face="'Times New Roman'"><span class="Apple-style-span" style="font-size: medium;"> </span></font></p>
+<p class="a0">【问题描述】</p>
+<p class="a0"><font class="Apple-style-span" face="'Times New Roman'"><span lang="EN-US" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;"><span style="mso-list:Ignore"><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;</span></span></span><!--[endif]--><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">实现一个时间类</span><span lang="EN-US">Time</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">。将小时，分钟和秒存储为</span><span lang="EN-US">int</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">型成员变量。要求该类中包含一个构造函数，访问用的函数，一个推进当前时间的函数</span><span lang="EN-US">adv()</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，一个重新设置当前时间（即将当前时间设为</span><b style="mso-bidi-font-weight:normal"><span lang="EN-US">00:00:00</span></b><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">）的函数</span><span lang="EN-US">reset()</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">和输出结果函数</span><span lang="EN-US">print()</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">。注意时间按数字式电子表格式显示，即小时、分、秒分别用两位表示，如果其中之一小于</span><span lang="EN-US">10</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，则前方补</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，如</span><b style="mso-bidi-font-weight:normal"><span lang="EN-US">22:01:00</span></b><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">（中间不含空格），另外按该格式依次输出时、分、秒后，以</span><span lang="EN-US">endl</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">结尾。当输入时间超出合法范围（提示：注意上下界）时，请自动按照</span><b style="mso-bidi-font-weight:normal"><span lang="EN-US">24</span></b><b style="mso-bidi-font-weight:normal"><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">小时制</span></b><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">进行转换，如输入</span><span lang="EN-US">25:00:61</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，则输出应为</span><span lang="EN-US">01:01:01</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">。</span></font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'"> </font></p>
+<p class="a" style="margin-top:4.65pt;text-indent:18.0pt"><font class="Apple-style-span" face="'Times New Roman'"><span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:12.0pt;mso-hansi-font-family:宋体;
+background:#D9D9D9;mso-shading:white;mso-pattern:gray-15 auto;mso-font-kerning:
+1.0pt"><o:p>&nbsp;</o:p></span></font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'"> </font></p>
+<p class="a" style="margin-top:4.65pt;text-indent:18.0pt"><font class="Apple-style-span" face="'Times New Roman'"><span style="font-size:
+10.5pt;mso-bidi-font-size:12.0pt;mso-hansi-font-family:宋体;background:#D9D9D9;
+mso-shading:white;mso-pattern:gray-15 auto;mso-font-kerning:1.0pt">第一步</span><span style="font-size:10.5pt;mso-bidi-font-size:12.0pt;mso-hansi-font-family:宋体;
+mso-font-kerning:1.0pt">：依据题意定</span><span style="font-size:10.5pt;mso-bidi-font-size:
+12.0pt;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt">义</span><span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:12.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-font-kerning:1.0pt">Time</span><span style="font-size:10.5pt;mso-bidi-font-size:
+12.0pt;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt">类</span><span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:12.0pt;mso-hansi-font-family:
+宋体;mso-font-kerning:1.0pt"><o:p></o:p></span></font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'"> </font></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><font class="Apple-style-span" face="'Times New Roman'">&nbsp;</font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'"> </font></p>
+<p class="a" style="margin-top:4.65pt;text-indent:18.0pt"><font class="Apple-style-span" face="'Times New Roman'"><span style="font-size:
+10.5pt;mso-bidi-font-size:12.0pt;mso-hansi-font-family:宋体;background:#D9D9D9;
+mso-shading:white;mso-pattern:gray-15 auto;mso-font-kerning:1.0pt">第二步</span><span style="font-size:10.5pt;mso-bidi-font-size:12.0pt;mso-hansi-font-family:宋体;
+mso-font-kerning:1.0pt">：利用如下测试程序对所编写的</span><span lang="EN-US" style="font-size:
+10.5pt;mso-bidi-font-size:12.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-font-kerning:1.0pt">Time</span><span style="font-size:10.5pt;mso-bidi-font-size:
+12.0pt;mso-hansi-font-family:宋体;mso-font-kerning:1.0pt">类进行测试。<span lang="EN-US"><o:p></o:p></span></span></font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'">
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><a name="OLE_LINK3"></a></p>
+<p class="a0" style="text-indent:0cm;mso-list:none">&nbsp;</p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:red;mso-font-kerning:0pt">输入：</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;color:red;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">0 0 0 24 0 0<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:red;mso-font-kerning:0pt">输出：</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;color:red;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">00:00:00<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">00:00:00<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">00:00:00<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;background:yellow;mso-highlight:yellow;
+mso-font-kerning:0pt">示例</span><span lang="EN-US" style="font-size:9.0pt;
+font-family:&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;background:yellow;mso-highlight:yellow;mso-font-kerning:0pt">2</span><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;background:yellow;mso-highlight:yellow;
+mso-font-kerning:0pt">：</span><span lang="EN-US" style="font-size:9.0pt;
+font-family:&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:red;mso-font-kerning:0pt">输入：</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;color:red;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">0 0 0 0 0 -1<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:red;mso-font-kerning:0pt">输出：</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;color:red;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">00:00:00<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">23:59:59<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">00:00:00<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;background:yellow;mso-highlight:yellow;
+mso-font-kerning:0pt">示例</span><span lang="EN-US" style="font-size:9.0pt;
+font-family:&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;background:yellow;mso-highlight:yellow;mso-font-kerning:0pt">3</span><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;background:yellow;mso-highlight:yellow;
+mso-font-kerning:0pt">：</span><span lang="EN-US" style="font-size:9.0pt;
+font-family:&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:red;mso-font-kerning:0pt">输入：</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;color:red;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">25 63 61 0 0 1<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:red;mso-font-kerning:0pt">输出：</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;color:red;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">02:04:01<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">02:04:02<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">00:00:00<o:p></o:p></span></p>
+</font></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p><div>编译语言：CPP</div>

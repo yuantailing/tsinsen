@@ -1,0 +1,90 @@
+<div>c++_ch04_03</div>
+<div>时间限制：2.0s 内存限制：32.0MB</div>
+<p class="a" style="margin: 6pt 0cm 3pt 18pt"><font class="Apple-style-span" face="'Times New Roman'"><span class="Apple-style-span" style="font-size: medium;"> </span></font></p>
+<p class="a">【问题描述】</p>
+<p class="a"><font class="Apple-style-span" face="'Times New Roman'"><span lang="EN-US" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;"><span style="mso-list:Ignore"><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;</span></span></span><!--[endif]--><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">实现一个表示分数的</span><b style="mso-bidi-font-weight:normal"><span lang="EN-US">Fraction</span></b><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">类。在该类中有两个数据成员分别用于存储分数的分子和分母。函数成员中包含一个设置分子和分母的函数</span><span lang="EN-US">assign()</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，转换成</span><span lang="EN-US">double </span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">类型数值的函数</span><span lang="EN-US">convert()</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，交换分子和分母的函数</span><span lang="EN-US">invert()</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">以及一个输出分数的函数</span><span lang="EN-US">print()</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，请<span style="color:red">注意输出结果格式</span>：若分子分母同时为</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，则输出字符串&ldquo;</span><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="color:red">#NAN</span></b><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">&rdquo;；若只有分母为</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，则输出字符串&ldquo;</span><b style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="color:red">#INF</span></b><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">&rdquo;；其余情况输出最简分式，即<span style="color:red">最大公因子</span>已被约去后的形式；当分子为</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，分母为负数时，注意结果应输出</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，而非&ldquo;</span><span lang="EN-US">-0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">&rdquo;。</span></font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'"> </font></p>
+<p class="MsoNormal"><font class="Apple-style-span" face="'Times New Roman'"><span lang="EN-US"><o:p>&nbsp;</o:p></span></font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'"> </font></p>
+<p class="MsoNormal" style="margin-left:18.0pt"><font class="Apple-style-span" face="'Times New Roman'"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+background:#D9D9D9;mso-shading:white;mso-pattern:gray-15 auto">第一步</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">：首先通过枚举类型</span><b style="mso-bidi-font-weight:normal"><span lang="EN-US">Flag</span></b><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">来定义表示分值求值结果的状态，</span><span lang="EN-US" style="color:red">NORMAL</span><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">表示两个非零数相除，</span><span lang="EN-US" style="color:red">NAN</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">表示分子分母同时为</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US" style="color:red">INF</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">表示分子不为</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">而分母为</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">。</span></font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'"> </font></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><font class="Apple-style-span" face="'Times New Roman'">&nbsp;</font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'"> </font></p>
+<p class="MsoNormal" style="margin-left:18.0pt"><font class="Apple-style-span" face="'Times New Roman'"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+background:#D9D9D9;mso-shading:white;mso-pattern:gray-15 auto">第二步</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">：依据题意实现</span><span lang="EN-US">Fraction</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">类。</span></font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'"> </font></p>
+<p class="MsoNormal" align="left" style="margin-left:21.0pt;mso-para-margin-left:
+2.0gd;text-align:left;background:#F2F2F2;mso-background-themecolor:background1;
+mso-background-themeshade:242;mso-layout-grid-align:none;text-autospace:none"><font class="Apple-style-span" face="'Times New Roman'">&nbsp;</font></p>
+<p><font class="Apple-style-span" face="'Times New Roman'"> </font></p>
+<p class="MsoNormal" style="margin-left:18.0pt"><font class="Apple-style-span" face="'Times New Roman'"><span lang="EN-US"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="font-family: 'Times New Roman'; text-indent: 18pt;"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+background:#D9D9D9;mso-shading:white;mso-pattern:gray-15 auto">第三步</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">：依据下列测试程序对所编写的</span><span lang="EN-US">Fraction</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">类进行测试。</span></p>
+<p class="MsoNormal" style="font-family: 'Times New Roman'; text-indent: 18pt;">【输入样例1】</p>
+<p class="MsoNormal" align="left" style="font-family: 'Times New Roman'; margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242); background-position: initial initial; background-repeat: initial initial;"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">0 -100<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242);"><font color="#ff0000" face="宋体">【输出样例1】</font></p>
+<p class="MsoNormal" align="left" style="font-family: 'Times New Roman'; margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242); background-position: initial initial; background-repeat: initial initial;"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">z = 0/-1 = 0<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="font-family: 'Times New Roman'; margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242); background-position: initial initial; background-repeat: initial initial;"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">1/z = -1/0<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242);"><font face="宋体">【输入样例2】</font></p>
+<p class="MsoNormal" align="left" style="font-family: 'Times New Roman'; margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242); background-position: initial initial; background-repeat: initial initial;"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">100 0<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242);"><font color="#ff0000" face="宋体">【输出样例2】</font></p>
+<p class="MsoNormal" align="left" style="font-family: 'Times New Roman'; margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242); background-position: initial initial; background-repeat: initial initial;"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">z = 1/0 = #INF<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="font-family: 'Times New Roman'; margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242); background-position: initial initial; background-repeat: initial initial;"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">1/z = 0/1<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242);"><font face="宋体">【输入样例1】</font></p>
+<p class="MsoNormal" align="left" style="font-family: 'Times New Roman'; margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242); background-position: initial initial; background-repeat: initial initial;"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">24 -36<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242);"><font color="#ff0000" face="宋体">【输出样例1】</font></p>
+<p class="MsoNormal" align="left" style="font-family: 'Times New Roman'; margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242); background-position: initial initial; background-repeat: initial initial;"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">z = 2/-3 = -0.666667<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="font-family: 'Times New Roman'; margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242); background-position: initial initial; background-repeat: initial initial;"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt">1/z = -3/2<o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="font-family: 'Times New Roman'; margin-left: 21pt; text-align: left; background-color: rgb(242, 242, 242); background-position: initial initial; background-repeat: initial initial;"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span id="1301055624653S" style="display: none">&nbsp;</span></p><div>编译语言：CPP</div>

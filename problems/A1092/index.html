@@ -1,0 +1,71 @@
+<div>数据加密</div>
+<div>时间限制：1.0s 内存限制：512.0MB</div>
+<p><b><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">【问题描述】</span></b><b><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></b></p>
+<p class="MsoNormal" style="text-indent:21.0pt;mso-char-indent-count:1.75"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">某个公司采用公用电话传递数据，数据是四位的整数，数据在传递过程中是加密的：每位数字都加上</span><span lang="EN-US" style="font-size:12.0pt">5</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，得到的结果除以</span><span lang="EN-US" style="font-size:12.0pt">10</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">的余数代替该数字，再将第一位和第四位交换，第二位和第三位交换。请你编写程序按照上述规则加密数据。</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
+<p class="MsoNormal"><b><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">【输入格式】</span></b><b><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></b></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">输入只有一行，包括一个</span><span lang="EN-US" style="font-size:12.0pt">4</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">位数的正整数</span><span lang="EN-US" style="font-size:12.0pt">d</span><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">（</span><span lang="EN-US" style="font-size:12.0pt">1000</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">&le;</span><span lang="EN-US" style="font-size:12.0pt">d</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">&le;</span><span lang="EN-US" style="font-size:12.0pt">9999</span><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">）</span><span lang="EN-US" style="font-size:12.0pt">, </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">表示加密前的数据。</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
+<p class="MsoNormal"><b><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">【输出格式】</span></b><b><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></b></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">输出只有一行，也是一个</span><span lang="EN-US" style="font-size:12.0pt">4</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">位数的正整数，表示加密后的数据。</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【样例输入</span></b><b style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="font-size:12.0pt">1</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">】</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></b></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt">1235<o:p></o:p></span></p>
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【样例输出</span></b><b style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="font-size:12.0pt">1</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">】</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></b></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt">876<o:p></o:p></span></p>
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【样例</span></b><b style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="font-size:12.0pt">1</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">说明】</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></b></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt">1235</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">每位上数字加</span><span lang="EN-US" style="font-size:12.0pt">5</span><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">后模</span><span lang="EN-US" style="font-size:12.0pt">10</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">得到的新数字是</span><span lang="EN-US" style="font-size:12.0pt">6780</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，按照要求第一位第四位交换，第二位第三位交换后是</span><span lang="EN-US" style="font-size:12.0pt">876</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">（先导</span><span lang="EN-US" style="font-size:12.0pt">0</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">不输出）。</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【样例输入</span></b><b style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="font-size:12.0pt">2</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">】</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></b></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt">2356<o:p></o:p></span></p>
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【样例输出</span></b><b style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="font-size:12.0pt">2</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">】</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></b></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt">1087<o:p></o:p></span></p>
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【样例</span></b><b style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="font-size:12.0pt">1</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">说明】</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></b></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt">2356</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">每位上数字加</span><span lang="EN-US" style="font-size:12.0pt">5</span><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">后模</span><span lang="EN-US" style="font-size:12.0pt">10</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">得到的新数字是</span><span lang="EN-US" style="font-size:12.0pt">7801</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，按照要求第一位第四位交换，第二位第三位交换后是</span><span lang="EN-US" style="font-size:12.0pt">1087<o:p></o:p></span></p><div>编译语言：CPP,C0X,VC9,C,JAVA,PAS,PYTHON</div>

@@ -1,0 +1,26 @@
+<div>最大公约数</div>
+<div>时间限制：1.0s 内存限制：512.0MB</div>
+<p class="subtitle">问题描述</p>
+<p class="probcontent">
+求两个整数的最大公约数是一个很有价值的问题，给定整数a和b，下面的方法可以较快速的求出a和b的最大公约数。<br />
+如果a是b的倍数，则a和b的最大公约数为b，否则a和b的最大公约数等于b和a%b的最大公约数。其中a%b表示a除b的余数。<br />
+如，要求48和72的最大公约数，用(48,72)来表示，则可以按下面的过程来求：<br />
+(48,72)=(72,48)=(48,24)=24。<br />
+给出a和b，用递归的方式来求a和b的最大公约数。
+<br /><br /></p>
+<p class="subtitle">输入格式</p>
+<p class="probcontent">
+输入的第一行包含两个整数a, b。
+<br /><br /></p>
+<p class="subtitle">输出格式</p>
+<p class="probcontent">
+输出两个数的最大公约数。
+<br /><br /></p>
+<p class="subtitle">样例输入</p>
+<p class="probcontent">
+48 72
+<br /><br /></p>
+<p class="subtitle">样例输出</p>
+<p class="probcontent">
+24
+<br /><br /></p><div>编译语言：CPP,C</div>

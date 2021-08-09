@@ -1,0 +1,329 @@
+<div>树网的核</div>
+<div>时间限制：1.0s 内存限制：256.0MB</div>
+<p>【问题描述】</p>
+<p class="MsoNormal" style="text-indent:24.0pt;line-height:18.0pt;mso-line-height-rule:
+exactly"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">设</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">T=(V, E, W) </span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">是一个无圈且连通的无向图（也称为无根树），每条边带有正整数的权，我们称</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">T</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">为树网（</span><i><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi">treenetwork</span></i><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin">），其中</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">V, E</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">分别表示结点与边的集合，</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">W</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">表示各边长度的集合，并设</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">T</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">有</span><i><span lang="EN-US">n</span></i><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">个结点。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:
+minor-bidi"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:24.1pt;line-height:18.0pt;mso-line-height-rule:
+exactly"><b><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin">路径：</span></b><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin">树网中任何两结点</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">a,b</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">都存在唯一的一条简单路径，用</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">d(a,b)</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">表示以</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">a,b</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">为端点的路径的长度，它是该路径上各边长度之和。我们称</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">d(a,b)</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">为</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">a,b</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">两结点间的距离。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:24.0pt;line-height:18.0pt;mso-line-height-rule:
+exactly"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">一点</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">v</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">到一条路径</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">P</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">的距离为该点与</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">P</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Courier New&quot;">上</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">的最近的结点的距离：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Courier New&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi"><o:p></o:p></span></p>
+<p class="MsoNormal" align="center" style="text-align:center;text-indent:24.1pt;
+line-height:18.0pt;mso-line-height-rule:exactly"><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">d(v</span></i></b><b><i><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">，</span></i></b><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">P)</span></i></b><b><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi">=</span></b><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi">min{<b><i>d(v</i></b></span><b><i><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin">，</span></i></b><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">u)</span></i></b><b><i><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">，</span></i></b><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">u</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">为路径</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">P</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">上的结点</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">}</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:24.1pt;line-height:18.0pt;mso-line-height-rule:
+exactly"><b><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin">树网的直径：</span></b><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin">树网中最长的路径称为树网的直径。对于给定的树网</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">T</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">，直径不一定是唯一的，但可以证明：各直径的中点（不一定恰好是某个结点，可能在某条边的内部）是唯一的，我们称该点为树网的中心。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:24.1pt;line-height:18.0pt;mso-line-height-rule:
+exactly"><b><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin">偏心距</span></b><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">ECC(F)</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">：树网</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">T</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">中距路径</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">F</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">最远的结点到路径</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">F</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">的距离，即</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi"><o:p></o:p></span></p>
+<p class="MsoNormal" align="center" style="text-align:center;text-indent:24.0pt;
+line-height:18.0pt;mso-line-height-rule:exactly"><font face="'Courier New'">ECC(F) = max{d(v, F), v</font><span style="font-family: 宋体; font-size: 12pt; ">&isin;V}</span><span style="font-family: 宋体; line-height: 18pt; text-indent: 24pt; ">。</span></p>
+<p class="MsoNormal" style="text-indent:23.6pt;mso-char-indent-count:1.96;
+line-height:18.0pt;mso-line-height-rule:exactly"><b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">任务：</span></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">对于给定的树网</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">T=(V, E,W)</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">和非负整数</span><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">s</span></i><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">，求一个路径</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">F</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">，它是某直径上的一段路径（该路径两端均为树网中的结点），其长度不超过</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">s</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">（可以等于</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">s</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">），使偏心距</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">ECC(F)</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">最小。我们称这个路径为树网</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">T=(V,E,W)</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">的<b>核（</b></span><b><i><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi">Core</span></i></b><b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">）</span></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">。必要时，</span><b><i><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">F</span></i></b><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">可以退化为某个结点。一般来说，在上述定义下，核不一定只有一个，但最小偏心距是唯一的。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:24.0pt;line-height:18.0pt;mso-line-height-rule:
+exactly"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin">下面的图给出了树网的一个实例。图中，</span><span lang="EN-US">A-B</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">与</span><span lang="EN-US">A-C</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">是两条直径，长度均为</span><span lang="EN-US">20</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">。点</span><span lang="EN-US">W</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">是树网的中心，</span><span lang="EN-US">EF</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">边的长度为</span><span lang="EN-US">5</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">。如果指定</span><i><span lang="EN-US">s</span></i><span lang="EN-US">=11</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">，则树网的核为路径</span><span lang="EN-US">DEFG</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">（也可以取为路径</span><span lang="EN-US">DEF</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">），偏心距为</span><span lang="EN-US">8</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">。如果指定</span><i><span lang="EN-US">s</span></i><span lang="EN-US">=0</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">（或</span><i><span lang="EN-US">s</span></i><span lang="EN-US">=1</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">、</span><i><span lang="EN-US">s</span></i><span lang="EN-US">=2</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">），则树网的核为结点</span><span lang="EN-US">F</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">，偏心距为</span><span lang="EN-US">12</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">。</span></p>
+<p class="MsoNormal" style="text-indent:24.0pt;line-height:18.0pt;mso-line-height-rule:
+exactly"><img width="259" height="224" alt="" src="/RequireFile.do?fid=D2nnm3y9" /></p>
+<p class="MsoNormal" style="text-indent:24.0pt;line-height:18.0pt;mso-line-height-rule:
+exactly"><span lang="EN-US"><o:p></o:p></span></p>
+<p>【输入格式】</p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">输入</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin">包含</span><i><span lang="EN-US">n</span></i><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">行：</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">第</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">行，两个正整数</span><i><span lang="EN-US">n</span></i><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">和</span><i><span lang="EN-US">s</span></i><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">，中间用一个空格隔开。其中</span><i><span lang="EN-US">n</span></i><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">为树网结点的个数，</span><i><span lang="EN-US">s</span></i><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">为树网的核的长度的上界。设结点编号依次为</span><span lang="EN-US">1, 2, ..., <i>n</i></span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">从第</span><span lang="EN-US">2</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">行到第</span><i><span lang="EN-US">n</span></i><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">行，每行给出</span><span lang="EN-US">3</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">个用空格隔开的正整数，依次表示每一条边的两个端点编号和长度。例如，</span><span lang="EN-US">&ldquo;2 4 <st1:chmetcnv unitname="&rdquo;" sourcevalue="7" hasspace="False" negative="False" numbertype="1" tcsc="0" w:st="on">7&rdquo;</st1:chmetcnv></span><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">表示连接结点</span><span lang="EN-US">2</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">与</span><span lang="EN-US">4</span><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin">的边的长度为</span><span lang="EN-US">7</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">所给的数据都是正确的，不必检验。</span><br />
+【输出格式】<br />
+<span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">输出</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">一个非负整数，为指定意义下的最小偏心距</span>。<br />
+【样例输入】</p>
+<p class="a"><span lang="EN-US">5 2<o:p></o:p></span></p>
+<p class="a"><span lang="EN-US">1 2 5<o:p></o:p></span></p>
+<p class="a"><span lang="EN-US">2 3 2<o:p></o:p></span></p>
+<p class="a"><span lang="EN-US">2 4 4<o:p></o:p></span></p>
+<p><span lang="EN-US" style="font-size: 12pt; font-family: 'Times New Roman', serif; ">2 5 3</span><br />
+【样例输出】<br />
+<span lang="EN-US" style="font-size: 12pt; font-family: 'Times New Roman', serif; ">5</span><br />
+【样例输入】</p>
+<p class="a">
+<p class="a"><span lang="EN-US">8 6<o:p></o:p></span></p>
+<p class="a"><span lang="EN-US">1 3 2<o:p></o:p></span></p>
+<p class="a"><span lang="EN-US">2 3 2<o:p></o:p></span></p>
+<p class="a"><span lang="EN-US">3 4 6<o:p></o:p></span></p>
+<p class="a"><span lang="EN-US">4 5 3<o:p></o:p></span></p>
+<p class="a"><span lang="EN-US">4 6 4<o:p></o:p></span></p>
+<p class="a"><span lang="EN-US">4 7 2<o:p></o:p></span></p>
+<span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.5pt;font-family:
+&quot;Times New Roman&quot;,&quot;serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-latin;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">7 8 3</span></p>
+<p>【样例输出】<br />
+<span lang="EN-US" style="font-size: 12pt; font-family: 'Times New Roman', serif; ">5</span><br />
+【数据规模和约定】</p>
+<p class="MsoNormal" style="text-indent:24.0pt;line-height:12.0pt"><span lang="EN-US">40%</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">的数据满足：</span><span lang="EN-US">5&lt;=<i>n</i>&lt;=15<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:24.0pt;line-height:12.0pt"><span lang="EN-US">70%</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-hansi-theme-font:
+minor-latin">的数据满足：</span><span lang="EN-US">5&lt;=<i>n</i>&lt;=80<o:p></o:p></span></p>
+<p><span lang="EN-US" style="line-height: 12pt; text-indent: 24pt; ">100%</span><span style="line-height: 12pt; text-indent: 24pt; font-family: 宋体; ">的数据满足：</span><span lang="EN-US" style="line-height: 12pt; text-indent: 24pt; ">5&lt;=<i>n</i>&lt;=300, 0&lt;=<i>s</i>&lt;=1000</span><span style="line-height: 12pt; text-indent: 24pt; font-family: 宋体; ">。边长度为不超过</span><span lang="EN-US" style="line-height: 12pt; text-indent: 24pt; ">1000</span><span style="line-height: 12pt; text-indent: 24pt; font-family: 宋体; ">的正整数</span>。</p><div>编译语言：CPP,C0X,VC9,C,JAVA,PAS,PYTHON</div>
